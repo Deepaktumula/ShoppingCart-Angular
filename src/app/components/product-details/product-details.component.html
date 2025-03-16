@@ -1,0 +1,46 @@
+<div class="card-container">
+    <div class="card mt-2">
+
+        <img [src]="selectedProduct.image" [title]="selectedProduct.title" [alt]="selectedProduct.title" class="card-image">
+
+        <p class="card-title">{{ selectedProduct.title.substring(0, 25) }}</p>
+
+        <p class="card-text" style="text-align: justify; font-size: 14px;"><b>Description:</b>
+            {{
+                selectedProduct.description
+            }}
+        </p>
+
+        
+        <p style="text-align: justify; font-size: 14px; margin-top: -10px;"><b>Rating:</b>
+            {{ selectedProduct.rating.rate }}
+        </p>
+
+        <p style="text-align: justify; font-size: 14px; margin-top: -12px;"><b>Reviews:</b>
+            {{ selectedProduct.rating.count }}
+        </p>
+
+        <p style="margin-top: -20px;"><strong>Price: </strong> ₹{{ (selectedProduct.price * 80).toFixed(2) }}</p>
+
+        <div class="d-flex justify-content-between align-items-center my-2">
+
+            <p class="mb-0 text-success" role="button" (click)="addToCart(selectedProduct)">
+                <mat-icon fontIcon="shopping_cart_checkout"></mat-icon>
+            </p>
+
+            <select class="form-select form-select-sm text-center" style="height: max-content; width: 8rem;" [(ngModel)]="quantity">
+                <option value="">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+            <p class="mb-0 text-danger" role="button" (click)="removeFromCart(selectedProduct)">
+                <mat-icon fontIcon="delete"></mat-icon>
+            </p>
+        </div>
+
+    </div>
+</div>

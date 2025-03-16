@@ -1,0 +1,36 @@
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid rgb(236, 226, 226);
+    border-radius: 8px;
+    padding: 16px;
+    width: 250px;
+    margin: 10px;
+    gap: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-image {
+    height: 140px;
+    width: 100%;
+    aspect-ratio: 3/2;
+    padding-top: 10px;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.read-more-btn {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(60, 60, 226);
+    cursor: pointer;
+}

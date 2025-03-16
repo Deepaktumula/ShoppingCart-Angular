@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card-container">
+        <div class="card mt-2">
+    
+            <img (click)="detailsPage(product.id)" [src]="product.image" [title]="product.title" [alt]="product.title"
+                class="card-image">
+    
+            <p class="card-title">{{ product.title.substring(0, 11) }}</p>
+    
+    
+            <p class="card-text" style="font-size: 14px; font-family: 'Times New Roman', Times, serif; margin-top: -18px;">
+            <b>Description:</b>
+            {{
+                showDescription ?
+                    product.description.trim() :
+                    product.description.substring(0, 25).trim() + "..."
+            }}
+    
+            <span class="read-more-btn" (click)="viewFullDescription()">
+                {{ showDescription ? 'show less' : 'show more' }}
+            </span>
+        </p>
+    
+            <p style="margin-top: -20px;"><strong>Price: </strong> ₹{{ (product.price * 80).toFixed(2) }}</p>
+    
+            <div class="d-flex justify-content-between align-items-center my-2">
+    
+                <p class="mb-0 text-success" role="button" (click)="addToCart(product)">
+                    <mat-icon fontIcon="shopping_cart_checkout"></mat-icon>
+                </p>
+    
+                <select class="form-select form-select-sm text-center" role="button" style="height: max-content; width: 8rem;" [(ngModel)]="quantity">
+                    <option value="">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+    
+                <p class="mb-0 text-danger" role="button" (click)="removeFromCart(product)">
+                    <mat-icon fontIcon="delete"></mat-icon>
+                </p>
+            </div>
+    
+        </div>
+    </div>
+</div>

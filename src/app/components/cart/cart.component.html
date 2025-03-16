@@ -1,0 +1,70 @@
+<h3 class="text-center mt-3">Order Summary</h3>
+<hr class="text-muted">
+
+<!-- Empty Cart Message -->
+@if(cartProducts.length === 0) {
+    <div class="text-center mt-5">
+        <h5>No Products in Cart</h5>
+    </div>
+}
+
+<!-- Loop through cartProducts -->
+@for (product of cartProducts; track $index) {
+    <div class="container my-3">
+
+        <div class="card p-3 shadow-sm">
+            <div class="row g-3">
+
+                <!-- Left Hero Section - Product Image -->
+                <div class="col-md-4 text-center">
+                    <img [src]="product.image" [title]="product.title"  [alt]="product.title" class="img-fluid rounded" style="max-height: 150px; width: auto;">
+
+                </div>
+
+                <!-- Right Hero Section - Product Details -->
+
+                <div class="text-start col-md-8 ">
+                    <h5 class="card-title"><b>{{ product.title }}</b></h5>
+
+                    <p class="card-text text-muted mb-1">
+                        <b>Category:</b> {{ product.category }}
+                    </p>
+
+                    <p class="card-text text-muted mb-1">
+                        <b>Rating:</b> {{ product.rating.rate }}
+                    </p>
+
+                    <p class="card-text text-muted mb-1">
+                        <b>Reviews:</b> {{ product.rating.count }}
+                    </p>
+
+                    <p class="card-text text-muted mb-1">
+                        <b>Quantity:</b> {{ product.quantity }}
+                    </p>
+
+                    <p class="fw-bold fs-5">
+                        <strong>Price:</strong> ₹{{ getTotalPriceOfProduct(product)}}
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+}
+
+<div class="text-center my-4">
+    <h4 class="fw-bold">TotalPrice - {{getTotalCartPrice()}}</h4>
+
+    <button class="btn btn-success px-5 py-2 mt-3" (click)="orderSuccessMessage()">
+        Place Order
+    </button>
+
+    <!-- <button class="btn btn-success px-5 py-2 mt-3" (click)="payment()">
+        Place Order
+    </button> -->
+
+
+
+</div>

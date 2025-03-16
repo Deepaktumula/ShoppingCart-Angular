@@ -1,0 +1,13 @@
+@if (productsList.length === 0) {
+    <div class="loader">
+      <div class="spinner"></div>
+      <div>Loading...</div>
+    </div>
+    }
+    
+    <div class="card-group">
+      @for (product of productsList; track $index) {
+        <app-all-products [product]="product"></app-all-products>
+      }
+    </div>
+    

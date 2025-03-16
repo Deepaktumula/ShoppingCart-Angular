@@ -1,0 +1,47 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-top: -6px;
+}
+
+.card {
+    border: 1px solid rgb(236, 226, 226);
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 26px;
+    width: 650px;
+    gap: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.card-image {
+    height: 120px;
+    width: 100%;
+    cursor: pointer;
+    object-fit: contain;
+    margin-top: -15px;
+}
+
+.read-more-btn {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(60, 60, 226);
+    cursor: pointer;
+}
+
+button {
+    background-color: rgb(76, 76, 248);
+    color: white;
+    padding: 4px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #005bbd;
+}
